@@ -30,8 +30,8 @@
 1. リポジトリをクローン
 
    ```bash
-   git clone git@github.com:Scarlet1107/scarlet7-template.git
-   cd scarlet7-template
+   npx create-scarlet-template my-app
+   cd my-app
    ```
 
 2. Supabase で新規プロジェクトを作成
