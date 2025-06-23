@@ -110,7 +110,7 @@ export function SignUpForm({
             </div>
             <div className="mt-4 text-center text-sm">
               すでにアカウントをお持ちですか？{" "}
-              <Link href="/auth/login" className="underline underline-offset-4">
+              <Link href="/auth/login" className="underline underline-offset-4 text-blue-600 hover:text-blue-800">
                 ログイン
               </Link>
             </div>

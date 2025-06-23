@@ -1,12 +1,11 @@
-import React, { Children } from "react";
+import React from "react";
 import { ThemeSwitcher } from "./ThemeSwitcher";
-import { Button } from "./ui/button";
 import Link from "next/link";
 
 const AuthHeader = () => {
     return (
         <header className="flex w-screen items-center justify-between gap-4 bg-gray-100 p-8 md:px-16">
-            <h2 className="text-xl md:text-2xl">Scarlet7.net</h2>
+            <Link href={"/"} className='text-xl md:text-2xl'>Scarlet7.net</Link>
             <div className="space-x-8">
                 <Link
                     href="/auth/login"
