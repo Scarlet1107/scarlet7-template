@@ -14,7 +14,7 @@ export default async function Page({
           <Card>
             <CardHeader>
               <CardTitle className="text-2xl">
-                Sorry, something went wrong.
+                エラーが発生しました
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -24,7 +24,8 @@ export default async function Page({
                 </p>
               ) : (
                 <p className="text-sm text-muted-foreground">
-                  An unspecified error occurred.
+                  エラーコードがありません。<br />
+                  何か問題が発生した場合は、サポートにお問い合わせください。
                 </p>
               )}
             </CardContent>

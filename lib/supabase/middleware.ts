@@ -33,15 +33,21 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
+  const url = request.nextUrl.clone();
+
   if (
     request.nextUrl.pathname !== "/" &&
     !user &&
     !request.nextUrl.pathname.startsWith("/login") &&
     !request.nextUrl.pathname.startsWith("/auth")
   ) {
-    // no user, potentially respond by redirecting the user to the login page
-    const url = request.nextUrl.clone();
+    // ログインしていない場合、ログインページにリダイレクト
     url.pathname = "/auth/login";
+    return NextResponse.redirect(url);
+  }
+  // ログインしている場合、protectedページ以外を許可しない
+  else if (user && !request.nextUrl.pathname.startsWith("/protected")) {
+    url.pathname = "/protected/home";
     return NextResponse.redirect(url);
   }
 
