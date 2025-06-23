@@ -1,4 +1,4 @@
-import LpHeader from "@/components/LpHeader";
+import LpHeader from "@/components/header/LpHeader";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 

@@ -37,7 +37,7 @@ export function LoginForm({
         password,
       });
       if (error) throw error;
-      router.push("/protected");
+      router.push("/protected/home");
     } catch (error: unknown) {
       setError(error instanceof Error ? error.message : "An error occurred");
     } finally {
@@ -46,7 +46,7 @@ export function LoginForm({
   };
 
   return (
-    <div className={cn("flex flex-col gap-6", className)} {...props}>
+    <div className={cn("flex flex-col gap-6 px-4 md:px-0", className)} {...props}>
       <Card>
         <CardHeader>
           <CardTitle className="text-2xl">ログイン</CardTitle>

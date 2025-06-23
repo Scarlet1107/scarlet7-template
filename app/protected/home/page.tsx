@@ -8,7 +8,6 @@ export default async function ProtectedPage() {
   if (error || !data?.user) {
     redirect("/auth/login");
   }
-
   return (
     <div className="flex-1 w-full flex flex-col gap-12">
       Scarlet7.net

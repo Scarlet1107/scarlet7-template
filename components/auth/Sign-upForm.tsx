@@ -44,7 +44,7 @@ export function SignUpForm({
         email,
         password,
         options: {
-          emailRedirectTo: `${window.location.origin}/protected`,
+          emailRedirectTo: `${window.location.origin}/protected/home`,
         },
       });
       if (error) throw error;
@@ -57,7 +57,7 @@ export function SignUpForm({
   };
 
   return (
-    <div className={cn("flex flex-col gap-6", className)} {...props}>
+    <div className={cn("flex flex-col gap-6 px-4 md:px-0", className)} {...props}>
       <Card>
         <CardHeader>
           <CardTitle className="text-2xl">アカウント登録</CardTitle>
