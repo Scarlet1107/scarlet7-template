@@ -1,8 +1,5 @@
-import { DeployButton } from "@/components/deploy-button";
-import { EnvVarWarning } from "@/components/env-var-warning";
-import { AuthButton } from "@/components/auth-button";
 import { ThemeSwitcher } from "@/components/theme-switcher";
-import { hasEnvVars } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function ProtectedLayout({
@@ -18,10 +15,9 @@ export default function ProtectedLayout({
             <div className="flex gap-5 items-center font-semibold">
               <Link href={"/"}>Next.js Supabase Starter</Link>
               <div className="flex items-center gap-2">
-                <DeployButton />
+                <Button>botan</Button>
               </div>
             </div>
-            {!hasEnvVars ? <EnvVarWarning /> : <AuthButton />}
           </div>
         </nav>
         <div className="flex-1 flex flex-col gap-20 max-w-5xl p-5">
