@@ -8,9 +8,9 @@ export default function AuthLayout({
     return (
         <>
             <AuthHeader />
-            <div className="flex flex-col flex-1 w-full items-center justify-center">
+            <main className="flex flex-col flex-1 w-full items-center justify-center">
                 <div className="w-full max-w-sm">{children}</div>
-            </div>
+            </main>
         </>
     );
 }

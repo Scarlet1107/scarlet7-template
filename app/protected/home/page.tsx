@@ -10,7 +10,7 @@ export default async function ProtectedPage() {
   }
   return (
     <div className="flex-1 w-full flex flex-col gap-12">
-      Scarlet7.net
+      <h1 className="text-4xl">Your App start from Here!</h1>
     </div>
   );
 }
