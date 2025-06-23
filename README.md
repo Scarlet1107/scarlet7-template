@@ -4,6 +4,24 @@
 
 ---
 
+## 技術スタック
+
+* **フレームワーク**: Next.js (latest), React 19
+* **言語**: TypeScript 5
+* **UI**: Tailwind CSS v4, Shadcn/UI（Radix UI）
+* **アイコン**: lucide-react
+* **認証 & データベース**: Supabase JS, @supabase/ssr
+* **開発ツール**:
+
+  * ESLint (`eslint`, `eslint-config-next`, `@eslint/eslintrc`)
+  * Prettier (`prettier`, `prettier-plugin-tailwindcss`)
+  * PostCSS (`postcss`, `@tailwindcss/postcss`)
+  * Type Definitions (`@types/node`, `@types/react`, `@types/react-dom`)
+
+* **データベース**: Supabase
+
+---
+
 ## 主な機能
 
 * **日本語のみ対応**
@@ -72,4 +90,5 @@
 ---
 
 ## 開発
-app/protected/page.tsxはログイン後のユーザーが最初にアクセスするページです。ここを編集してアプリ開発を始めましょう
+
+`app/protected/page.tsx` はログイン後のユーザーが最初にアクセスするページです。ここを編集してアプリ開発を始めましょう。
