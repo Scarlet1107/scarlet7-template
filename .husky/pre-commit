@@ -1,0 +1,9 @@
+# .husky/pre-commit
+# 1) ステージ済みファイルをフォーマット＆自動修正
+npx lint-staged --allow-empty || exit 1
+
+# 2) リポジトリ全体を ESLint でチェック
+if ! npm run lint; then
+  printf "\n⚠️ lintに失敗したのでコミットできませんでした\n\n"
+  exit 1
+fi
