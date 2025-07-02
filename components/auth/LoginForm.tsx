@@ -3,12 +3,7 @@
 import { cn } from "@/lib/utils";
 import { createClient } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
@@ -46,7 +41,10 @@ export function LoginForm({
   };
 
   return (
-    <div className={cn("flex flex-col gap-6 px-4 md:px-0", className)} {...props}>
+    <div
+      className={cn("flex flex-col gap-6 px-4 md:px-0", className)}
+      {...props}
+    >
       <Card>
         <CardHeader>
           <CardTitle className="text-2xl">ログイン</CardTitle>
@@ -70,7 +68,7 @@ export function LoginForm({
                   <Label htmlFor="password">パスワード</Label>
                   <Link
                     href="/auth/forgot-password"
-                    className="ml-auto inline-block text-sm underline-offset-4 hover:underline hover:text-blue-800"
+                    className="ml-auto inline-block text-sm underline-offset-4 hover:text-blue-800 hover:underline"
                   >
                     パスワードをお忘れですか？
                   </Link>
@@ -92,7 +90,7 @@ export function LoginForm({
               新規作成は
               <Link
                 href="/auth/sign-up"
-                className="underline underline-offset-4 text-blue-600 hover:text-blue-800"
+                className="text-blue-600 underline underline-offset-4 hover:text-blue-800"
               >
                 こちら
               </Link>

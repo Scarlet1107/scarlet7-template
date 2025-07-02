@@ -43,7 +43,10 @@ export function UpdatePasswordForm({
   };
 
   return (
-    <div className={cn("flex flex-col gap-6 px-4 md:px-0", className)} {...props}>
+    <div
+      className={cn("flex flex-col gap-6 px-4 md:px-0", className)}
+      {...props}
+    >
       <Card>
         <CardHeader>
           <CardTitle className="text-2xl">パスワードをリセット</CardTitle>

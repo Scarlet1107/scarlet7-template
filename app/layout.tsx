@@ -26,7 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" suppressHydrationWarning>
-      <body className={`${geistSans.className} antialiased min-h-screen flex flex-col items-center`}>
+      <body
+        className={`${geistSans.className} flex min-h-screen flex-col items-center antialiased`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

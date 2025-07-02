@@ -9,7 +9,7 @@ export default async function ProtectedPage() {
     redirect("/auth/login");
   }
   return (
-    <div className="flex-1 w-full flex flex-col gap-12">
+    <div className="flex w-full flex-1 flex-col gap-12">
       <h1 className="text-4xl">Your App start from Here!</h1>
     </div>
   );

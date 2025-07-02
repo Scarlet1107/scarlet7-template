@@ -1,10 +1,9 @@
-import { LogoutButton } from '@/components/auth/LogoutButton';
+import { LogoutButton } from "@/components/auth/LogoutButton";
 
 export default async function ProtectedPage() {
-
-    return (
-        <div className="flex-1 w-full flex flex-col gap-12">
-            <LogoutButton />
-        </div>
-    );
+  return (
+    <div className="flex w-full flex-1 flex-col gap-12">
+      <LogoutButton />
+    </div>
+  );
 }

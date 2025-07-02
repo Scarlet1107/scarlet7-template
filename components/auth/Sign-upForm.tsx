@@ -3,12 +3,7 @@
 import { cn } from "@/lib/utils";
 import { createClient } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
@@ -57,7 +52,10 @@ export function SignUpForm({
   };
 
   return (
-    <div className={cn("flex flex-col gap-6 px-4 md:px-0", className)} {...props}>
+    <div
+      className={cn("flex flex-col gap-6 px-4 md:px-0", className)}
+      {...props}
+    >
       <Card>
         <CardHeader>
           <CardTitle className="text-2xl">アカウント登録</CardTitle>
@@ -100,16 +98,17 @@ export function SignUpForm({
                   onChange={(e) => setRepeatPassword(e.target.value)}
                 />
               </div>
-              {error && (
-                <p className="text-sm text-red-500">{error}</p>
-              )}
+              {error && <p className="text-sm text-red-500">{error}</p>}
               <Button type="submit" className="w-full" disabled={isLoading}>
                 {isLoading ? "アカウントを作成中…" : "登録する"}
               </Button>
             </div>
             <div className="mt-4 text-center text-sm">
               すでにアカウントをお持ちですか？{" "}
-              <Link href="/auth/login" className="underline underline-offset-4 text-blue-600 hover:text-blue-800">
+              <Link
+                href="/auth/login"
+                className="text-blue-600 underline underline-offset-4 hover:text-blue-800"
+              >
                 ログイン
               </Link>
             </div>

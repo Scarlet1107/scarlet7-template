@@ -31,7 +31,8 @@ export function LogoutButton() {
         <DialogHeader>
           <DialogTitle>ログアウト</DialogTitle>
           <DialogDescription>
-            本当にログアウトしますか？<br />
+            本当にログアウトしますか？
+            <br />
             アプリを再度使用するためには、ログインが必要になります。
           </DialogDescription>
         </DialogHeader>

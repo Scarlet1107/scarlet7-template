@@ -6,38 +6,37 @@
 
 ## 技術スタック
 
-* **フレームワーク**: Next.js (latest), React 19
-* **言語**: TypeScript 5
-* **UI**: Tailwind CSS v4, Shadcn/UI（Radix UI）
-* **アイコン**: lucide-react
-* **認証 & データベース**: Supabase JS, @supabase/ssr
-* **開発ツール**:
+- **フレームワーク**: Next.js (latest), React 19
+- **言語**: TypeScript 5
+- **UI**: Tailwind CSS v4, Shadcn/UI（Radix UI）
+- **アイコン**: lucide-react
+- **認証 & データベース**: Supabase JS, @supabase/ssr
+- **開発ツール**:
+  - ESLint (`eslint`, `eslint-config-next`, `@eslint/eslintrc`)
+  - Prettier (`prettier`, `prettier-plugin-tailwindcss`)
+  - PostCSS (`postcss`, `@tailwindcss/postcss`)
+  - Type Definitions (`@types/node`, `@types/react`, `@types/react-dom`)
 
-  * ESLint (`eslint`, `eslint-config-next`, `@eslint/eslintrc`)
-  * Prettier (`prettier`, `prettier-plugin-tailwindcss`)
-  * PostCSS (`postcss`, `@tailwindcss/postcss`)
-  * Type Definitions (`@types/node`, `@types/react`, `@types/react-dom`)
-
-* **データベース**: Supabase
+- **データベース**: Supabase
 
 ---
 
 ## 主な機能
 
-* **日本語のみ対応**
-* **認証機能**：Supabase Auth をクッキー経由で利用できる設定済み
-* **ヘッダー & モバイルナビゲーション**：PC とスマホで最適化された共通ナビゲーションコンポーネント
-* **UI ライブラリ**：Tailwind CSS + shadcn/ui
-* **コード整形**：Tailwind Prettier 設定を導入
-* **middlewareを用いたサーバーサイドでのアプリ保護**
+- **日本語のみ対応**
+- **認証機能**：Supabase Auth をクッキー経由で利用できる設定済み
+- **ヘッダー & モバイルナビゲーション**：PC とスマホで最適化された共通ナビゲーションコンポーネント
+- **UI ライブラリ**：Tailwind CSS + shadcn/ui
+- **コード整形**：Tailwind Prettier 設定を導入
+- **middlewareを用いたサーバーサイドでのアプリ保護**
 
 ---
 
 ## ルーティング構成
 
-| パス             | 説明                     |
-| -------------- | ---------------------- |
-| `/`            | ランディングページ（LP）          |
+| パス           | 説明                                         |
+| -------------- | -------------------------------------------- |
+| `/`            | ランディングページ（LP）                     |
 | `/auth/*`      | サインイン、サインアップなど認証関連のページ |
 | `/protected/*` | ログイン済みユーザーのみアクセス可能なページ |
 

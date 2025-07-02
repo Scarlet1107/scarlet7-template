@@ -45,7 +45,10 @@ export function ForgotPasswordForm({
   };
 
   return (
-    <div className={cn("flex flex-col gap-6 px-4 md:px-0", className)} {...props}>
+    <div
+      className={cn("flex flex-col gap-6 px-4 md:px-0", className)}
+      {...props}
+    >
       {success ? (
         <Card>
           <CardHeader>
@@ -55,7 +58,7 @@ export function ForgotPasswordForm({
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-muted-foreground text-sm">
               メールアドレスとパスワードで登録済みの場合、パスワードリセット用のメールが届きます。
             </p>
           </CardContent>
@@ -82,9 +85,7 @@ export function ForgotPasswordForm({
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
-                {error && (
-                  <p className="text-sm text-red-500">{error}</p>
-                )}
+                {error && <p className="text-sm text-red-500">{error}</p>}
                 <Button type="submit" className="w-full" disabled={isLoading}>
                   {isLoading ? "送信中…" : "リセットメールを送信"}
                 </Button>
