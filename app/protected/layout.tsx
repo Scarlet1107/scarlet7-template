@@ -9,13 +9,9 @@ export default async function ProtectedLayout({
   children: React.ReactNode;
 }) {
   const supabase = await createClient();
-
-  // Supabaseのユーザーテーブルから情報取得
-  const { data, error: userError } = await supabase.auth.getUser();
-  if (!data || userError) {
-    console.error("ユーザー情報の取得に失敗しました。", userError);
-  }
-  const user = data?.user;
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
   if (!user) {
     // ユーザーが取得できなかった場合LPページにリダイレクト
     redirect("/");
