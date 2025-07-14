@@ -3,8 +3,8 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 
-const defaultUrl = process.env.BASE_URL
-  ? `https://${process.env.BASE_URL}`
+const defaultUrl = process.env.NEXT_PUBLIC_BASE_URL
+  ? `https://${process.env.NEXT_PUBLIC_BASE_URL}`
   : "http://localhost:3000";
 
 export const metadata: Metadata = {
