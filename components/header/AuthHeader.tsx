@@ -38,8 +38,7 @@ const AuthHeader = () => {
                     : "text-stone-700 before:w-0 before:bg-orange-500 hover:text-orange-600 hover:before:w-full"
                 } `}
               >
-                {link.label}とあるNext.jsのプロジェクトで、npm run
-                formatというコマンドを作った。しかしこのフォーマットが自分の開発環境のVSCodeのフォーマットと若干違う。内部では同じVTRを使っているはずなのに、キャドウが違うのはどうしたのか。
+                {link.label}
               </Link>
             );
           })}
