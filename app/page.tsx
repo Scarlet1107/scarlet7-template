@@ -6,14 +6,18 @@ export default async function Home() {
   return (
     <>
       <AuthHeader />
-      <h2 className="text-4xl">Welcome to my Next.js app with Supabase!</h2>
-      <div className="mt-12 space-x-8">
-        <Button asChild>
-          <Link href="/auth/login">ログイン</Link>
-        </Button>
-        <Button asChild>
-          <Link href="/auth/sign-up">登録</Link>
-        </Button>
+      <div className="flex min-h-screen w-full flex-col items-center bg-gradient-to-br from-gray-50 via-white to-orange-50/30 px-4 pb-16 sm:px-6 lg:px-8">
+        <h2 className="mt-12 text-center text-4xl">
+          Welcome to my Next.js app with Supabase!
+        </h2>
+        <div className="mt-12 space-x-8">
+          <Button asChild>
+            <Link href="/auth/login">ログイン</Link>
+          </Button>
+          <Button asChild variant={"outline"}>
+            <Link href="/auth/sign-up">登録</Link>
+          </Button>
+        </div>
       </div>
     </>
   );

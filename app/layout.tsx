@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "@/components/ui/sonner";
 
 const defaultUrl = process.env.BASE_URL
   ? `https://${process.env.BASE_URL}`
@@ -52,6 +53,7 @@ export default function RootLayout({
         className={`${geistSans.className} flex min-h-screen w-screen flex-col items-center antialiased`}
       >
         {children}
+        <Toaster />
       </body>
     </html>
   );
