@@ -1,16 +1,38 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
-import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
-const defaultUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
+const defaultUrl = process.env.BASE_URL
+  ? `https://${process.env.BASE_URL}`
   : "http://localhost:3000";
 
 export const metadata: Metadata = {
   metadataBase: new URL(defaultUrl),
+  applicationName: "Scarlet Next.js and Supabase Starter Kit",
   title: "Scarlet Next.js and Supabase Starter Kit",
   description: "The fastest way to build apps with Next.js and Supabase",
+  openGraph: {
+    title: "Scarlet Next.js and Supabase Starter Kit",
+    description: "The fastest way to build apps with Next.js and Supabase",
+    url: defaultUrl,
+    siteName: "Scarlet Next.js and Supabase Starter Kit",
+    locale: "ja_JP",
+    type: "website",
+    images: [
+      {
+        url: `${defaultUrl}/icons/og-icon.png`,
+        width: 1200,
+        height: 630,
+        alt: "Open Graph Image",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Scarlet Next.js and Supabase Starter Kit",
+    description: "The fastest way to build apps with Next.js and Supabase",
+    images: ["/icons/og-icon.png"],
+  },
 };
 
 const geistSans = Geist({
@@ -27,16 +49,9 @@ export default function RootLayout({
   return (
     <html lang="ja" suppressHydrationWarning>
       <body
-        className={`${geistSans.className} flex min-h-screen flex-col items-center antialiased`}
+        className={`${geistSans.className} flex min-h-screen w-screen flex-col items-center antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        {children}
       </body>
     </html>
   );

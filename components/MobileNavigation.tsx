@@ -30,13 +30,15 @@ export const MobileNavigation = ({ navItems }: Props) => {
                   <Icon
                     className={cn(
                       "mb-1 h-5 w-5",
-                      isActive ? "text-sky-500" : "text-gray-500",
+                      isActive ? "text-orange-500" : "text-gray-500",
                     )}
                   />
                   <span
                     className={cn(
                       "text-[10px]",
-                      isActive ? "font-semibold text-sky-500" : "text-gray-500",
+                      isActive
+                        ? "font-semibold text-orange-500"
+                        : "text-gray-500",
                     )}
                   >
                     {label}
