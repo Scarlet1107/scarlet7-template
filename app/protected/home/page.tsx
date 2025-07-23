@@ -10,18 +10,20 @@ export default async function ProtectedPage() {
     redirect("/auth/login");
   }
   return (
-    <div className="flex w-full flex-1 flex-col gap-8 px-4 py-6 sm:gap-12 sm:px-8">
-      <h1 className="break-words text-2xl sm:text-4xl">
+    <div className="mx-auto flex w-full flex-1 flex-col gap-8 sm:gap-12">
+      <h1 className="text-2xl font-bold break-words sm:text-4xl">
         このアプリはここから始まる...
       </h1>
       {user && (
-        <div className="w-full rounded-lg border bg-gray-50 p-4 shadow-md sm:p-6">
+        <div className="bg-card w-full rounded-lg border p-4 shadow-md sm:p-6">
           <h2 className="mb-3 text-xl font-semibold sm:mb-4 sm:text-2xl">
             ログインしているユーザーのデータ
           </h2>
-          <pre className="overflow-x-auto rounded bg-white p-3 text-xs sm:p-4 sm:text-sm">
-            {JSON.stringify(user, null, 2)}
-          </pre>
+          <div className="bg-background overflow-x-auto rounded p-3">
+            <pre className="text-xs break-all whitespace-pre-wrap sm:text-sm">
+              {JSON.stringify(user, null, 2)}
+            </pre>
+          </div>
         </div>
       )}
     </div>

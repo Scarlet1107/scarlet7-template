@@ -42,7 +42,7 @@ export default async function ProtectedLayout({
       }}
     >
       <AppHeader />
-      <main className="flex max-w-5xl flex-1 flex-col gap-20 p-5">
+      <main className="mb-14 flex flex-1 flex-col px-4 py-6 sm:mb-0 md:px-6 md:py-8">
         {children}
       </main>
     </UserProvider>

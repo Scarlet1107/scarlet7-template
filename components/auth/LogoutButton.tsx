@@ -25,7 +25,7 @@ export function LogoutButton() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button>ログアウト</Button>
+        <Button className="mx-auto flex w-max">ログアウト</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>

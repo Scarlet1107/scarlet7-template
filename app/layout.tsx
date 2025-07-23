@@ -50,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="ja" suppressHydrationWarning>
       <body
-        className={`${geistSans.className} flex min-h-screen w-screen flex-col items-center antialiased`}
+        className={`${geistSans.className} flex min-h-screen w-full flex-col items-center antialiased`}
       >
         {children}
         <Toaster />
