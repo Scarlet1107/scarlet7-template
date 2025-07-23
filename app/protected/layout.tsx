@@ -1,48 +1,50 @@
-import { DeployButton } from "@/components/deploy-button";
-import { EnvVarWarning } from "@/components/env-var-warning";
-import { AuthButton } from "@/components/auth-button";
-import { ThemeSwitcher } from "@/components/theme-switcher";
-import { hasEnvVars } from "@/lib/utils";
-import Link from "next/link";
+import AppHeader from "@/components/header/AppHeader";
+import { UserProvider } from "@/context/UserContext";
+import { createClient } from "@/lib/supabase/server";
+import { redirect } from "next/navigation";
 
-export default function ProtectedLayout({
+export default async function ProtectedLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <main className="min-h-screen flex flex-col items-center">
-      <div className="flex-1 w-full flex flex-col gap-20 items-center">
-        <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
-          <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm">
-            <div className="flex gap-5 items-center font-semibold">
-              <Link href={"/"}>Next.js Supabase Starter</Link>
-              <div className="flex items-center gap-2">
-                <DeployButton />
-              </div>
-            </div>
-            {!hasEnvVars ? <EnvVarWarning /> : <AuthButton />}
-          </div>
-        </nav>
-        <div className="flex-1 flex flex-col gap-20 max-w-5xl p-5">
-          {children}
-        </div>
+  const supabase = await createClient();
+  const { data } = await supabase.auth.getClaims();
+  const user = data?.claims;
+  if (!user) {
+    // ユーザーが取得できなかった場合LPページにリダイレクト
+    redirect("/");
+  }
 
-        <footer className="w-full flex items-center justify-center border-t mx-auto text-center text-xs gap-8 py-16">
-          <p>
-            Powered by{" "}
-            <a
-              href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
-              target="_blank"
-              className="font-bold hover:underline"
-              rel="noreferrer"
-            >
-              Supabase
-            </a>
-          </p>
-          <ThemeSwitcher />
-        </footer>
-      </div>
-    </main>
+  // // もし独自にprofileテーブルを作成した場合はこちらで取得
+  // const { data: profileData, error: profileError } = await supabase
+  //   .from("profiles")
+  //   .select("id, name")
+  //   .eq("id", user.id)
+  //   .single();
+
+  // if (profileError || !profileData) {
+  //   redirect("/");
+  // }
+
+  // // 3. UserProfile 型にマッピング
+  // const profile: UserProfile = {
+  //   userId: profileData.id,
+  //   name: profileData.name,
+  // };
+
+  return (
+    // ここで渡しているUser情報は仮。metadataにデータを入れる処理は書いてないので、profileテーブルなどを作成しその情報を渡すことを推奨。
+    <UserProvider
+      user={{
+        userId: user?.sub,
+        name: user?.user_metadata?.name,
+      }}
+    >
+      <AppHeader />
+      <main className="flex max-w-5xl flex-1 flex-col gap-20 p-5">
+        {children}
+      </main>
+    </UserProvider>
   );
 }

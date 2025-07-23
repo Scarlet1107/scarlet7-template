@@ -1,17 +1,10 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
-import { hasEnvVars } from "../utils";
 
 export async function updateSession(request: NextRequest) {
   let supabaseResponse = NextResponse.next({
     request,
   });
-
-  // If the env vars are not set, skip middleware check. You can remove this
-  // once you setup the project.
-  if (!hasEnvVars) {
-    return supabaseResponse;
-  }
 
   // With Fluid compute, don't put this client in a global environment
   // variable. Always create a new one on each request.
@@ -44,7 +37,9 @@ export async function updateSession(request: NextRequest) {
 
   // IMPORTANT: If you remove getClaims() and you use server-side rendering
   // with the Supabase client, your users may be randomly logged out.
+  const start = Date.now();
   const { data } = await supabase.auth.getClaims();
+  console.log(`\n\ngetClaims took ${Date.now() - start}ms\n\n`);
   const user = data?.claims;
 
   if (

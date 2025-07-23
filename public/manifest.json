@@ -1,0 +1,21 @@
+{
+  "name": "Scarlet App",
+  "short_name": "Scarlet App",
+  "description": "A PWA for Scarlet",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#fdf2f8",
+  "icons": [
+    {
+      "src": "/icons/192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
