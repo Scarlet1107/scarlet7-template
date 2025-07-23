@@ -28,7 +28,6 @@
 - **ヘッダー & モバイルナビゲーション**：PC とスマホで最適化された共通ナビゲーションコンポーネント
 - **UI ライブラリ**：Tailwind CSS + shadcn/ui
 - **コード整形**：Tailwind Prettier 設定を導入
-- **自動フォーマット＆型チェック**：git commit時に自動でprettierとeslintが走ります。意図しないエラーを自動で防ぎます。
 - **middlewareを用いたサーバーサイドでのアプリ保護**
 
 ---
@@ -66,7 +65,7 @@
 
    ```dotenv
    NEXT_PUBLIC_SUPABASE_URL=あなたのSupabase プロジェクト URL
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=あなたのAnonキー
+   NEXT_PUBLIC_SUPABASE_PUBLISHABLE_OR_ANON_KEY=あなたのAnonキー
    ```
 
 4. 依存パッケージのインストール
