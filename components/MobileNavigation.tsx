@@ -19,14 +19,18 @@ export const MobileNavigation = ({ navItems }: Props) => {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed right-0 bottom-0 left-0 z-50 w-screen border-t border-gray-200 bg-gray-50/70 shadow-md sm:hidden dark:border-gray-200 dark:bg-white/70">
+    <nav className="border-border bg-background fixed right-0 bottom-0 left-0 z-50 w-screen border-t shadow-md sm:hidden">
       <ul className="flex items-center justify-around p-2">
         {navItems.map(({ href, icon: Icon, label }) => {
           const isActive = pathname === href;
           return (
             <li key={href}>
               <Link href={href}>
-                <div className="flex aspect-square h-13 w-13 flex-col items-center justify-center rounded-full bg-white text-xs transition-all duration-200 ease-in-out hover:bg-pink-50">
+                <div
+                  className={cn(
+                    "bg-card hover:bg-muted flex aspect-square h-13 w-13 flex-col items-center justify-center rounded-full text-xs transition-all duration-200 ease-in-out",
+                  )}
+                >
                   <Icon
                     className={cn(
                       "mb-1 h-5 w-5",
