@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
-@plugin 'tailwindcss-animate';
-
 @custom-variant dark (&:is(.dark *));
+
+/* 
+  ここから下はアプリ全体の色を定義しています。
+  以下のサイトでこのアプリのテーマ色を作成し、貼り付けることを推奨します。
+  https://tweakcn.com/editor/theme
+*/
 
 @theme {
   --color-background: hsl(var(--background));
