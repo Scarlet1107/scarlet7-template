@@ -12,7 +12,7 @@ export default async function ProtectedPage() {
   return (
     <div className="mx-auto flex w-full flex-1 flex-col gap-8 sm:gap-12">
       <h1 className="text-2xl font-bold break-words sm:text-4xl">
-        このアプリはここから始まる...
+        Happy Hacking! 🚀
       </h1>
       {user && (
         <div className="bg-card w-full rounded-lg border p-4 shadow-md sm:p-6">
