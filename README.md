@@ -61,7 +61,11 @@
    ```dotenv
    NEXT_PUBLIC_SUPABASE_URL=<Your Supabase URL>
    NEXT_PUBLIC_SUPABASE_PUBLISHABLE_OR_ANON_KEY=<Your publishable/anon key>
+   NEXT_PUBLIC_BASE_URL=<your-domain.com>
    ```
+
+   `NEXT_PUBLIC_BASE_URL` はメタデータ生成に使われるアプリのベースURLです。
+   何も設定しなくても `http://localhost:3000` が使われるので、開発中はそのままで大丈夫です。
 
 4. **依存パッケージをインストール**
 
