@@ -14,6 +14,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { toast } from "sonner";
 
 export function UpdatePasswordForm({
   className,
@@ -33,6 +34,7 @@ export function UpdatePasswordForm({
     try {
       const { error } = await supabase.auth.updateUser({ password });
       if (error) throw error;
+      toast.success("パスワードが更新されました");
       // 認証済みユーザー向けのルートにリダイレクト
       router.push("/protected/home");
     } catch (error: unknown) {
